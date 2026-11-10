@@ -4,222 +4,821 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cyber With Ritesh | साइबर विद रितेश</title>
+
+<title>Cyber With Ritesh | Digital Services</title>
+<meta name="description" content="Cyber With Ritesh - Online Digital Services and Assistance">
+
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Arial,sans-serif;
-background:#07111f;color:white;
-line-height:1.6
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-header{
-background:#10233c;text-align:center;padding:22px
+
+:root {
+    --blue: #00d9ff;
+    --dark: #030712;
+    --card: #0b1729;
+    --white: #ffffff;
 }
-header h1{color:#00d9ff;font-size:28px}
-header p{color:#ddd}
-nav{
-background:#18304d;padding:14px;
-text-align:center;position:sticky;top:0
+
+html {
+    scroll-behavior: smooth;
 }
-nav a{
-color:white;text-decoration:none;
-margin:8px;font-size:14px
+
+body {
+    font-family: Arial, sans-serif;
+    color: white;
+    background: var(--dark);
+    line-height: 1.6;
+    overflow-x: hidden;
 }
-.hero{
-text-align:center;padding:45px 15px;
-background:linear-gradient(135deg,#102c49,#07111f)}
+
+/* BACKGROUND */
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+      radial-gradient(circle at 15% 20%, #063c60 0, transparent 35%),
+      radial-gradient(circle at 85% 60%, #101b55 0, transparent 35%),
+      linear-gradient(135deg, #02050c, #071326, #02050c);
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .17;
+    background-image:
+      linear-gradient(rgba(0,217,255,.15) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0,217,255,.15) 1px, transparent 1px);
+    background-size: 45px 45px;
+}
+
+/* HEADER */
+
+header {
+    text-align: center;
+    padding: 22px 12px;
+    background: rgba(2, 8, 20, .92);
+    border-bottom: 1px solid rgba(0,217,255,.5);
+    box-shadow: 0 0 25px rgba(0,217,255,.12);
+}
+
+.logo {
+    font-size: 30px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: var(--blue);
+    text-shadow: 0 0 8px var(--blue), 0 0 22px #007bff;
+}
+
+header p {
+    color: #b8d5e9;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 13px 8px;
+    background: rgba(3, 12, 27, .96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid #123b58;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 13px;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+nav a:hover {
+    color: var(--blue);
+    background: #102d46;
+    box-shadow: 0 0 12px rgba(0,217,255,.3);
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 570px;
+    padding: 65px 15px 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    background:
+      radial-gradient(ellipse at center, rgba(0,130,255,.16), transparent 65%);
+}
+
+.profile-wrap {
+    width: 170px;
+    height: 170px;
+    padding: 6px;
+    border-radius: 50%;
+    border: 3px solid var(--blue);
+    box-shadow: 0 0 15px var(--blue), 0 0 40px #005eff;
+    margin-bottom: 24px;
+    animation: glow 3s infinite alternate;
+}
+
 .profile {
-    width: 145px !important;
-    height: 145px !important;
-    border-radius: 50% !important;
-    object-fit: cover !important;
-    display: block !important;
-    margin: 0 auto 15px auto !important;
-    border: 4px solid #00d9ff;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
 }
+
+@keyframes glow {
+    from { box-shadow: 0 0 12px var(--blue); }
+    to { box-shadow: 0 0 35px #008cff, 0 0 55px #005eff; }
 }
+
+.tagline {
+    display: inline-block;
+    color: var(--blue);
+    border: 1px solid #087da9;
+    background: rgba(0,217,255,.07);
+    padding: 6px 17px;
+    border-radius: 30px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
+
+.hero h1 {
+    font-size: clamp(30px, 6vw, 55px);
+    line-height: 1.2;
+    font-weight: 900;
+    color: white;
+    text-shadow: 0 0 20px rgba(0,217,255,.4);
 }
-.hero h2{color:#00d9ff;font-size:27px}
-.hero p{margin:12px;color:#ddd}
-.btn{
-display:inline-block;padding:12px 20px;
-margin:7px;border-radius:8px;
-text-decoration:none;font-weight:bold;
-background:#00d9ff;color:#06111e
+
+.hero h1 span {
+    color: var(--blue);
 }
-.whatsapp{background:#25D366;color:white}
-.instagram{background:#d62976;color:white}
-.services{padding:40px 15px}
-.title{
-text-align:center;color:#00d9ff;
-margin-bottom:25px;font-size:25px
+
+.hero h2 {
+    margin-top: 14px;
+    font-size: 21px;
+    color: #d5e9ff;
 }
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(145px,1fr));
-gap:15px;max-width:1000px;margin:auto
+
+.hero p {
+    max-width: 650px;
+    margin: 15px auto;
+    color: #b8c8da;
 }
-.card{
-background:#142a43;border:1px solid #294665;
-padding:20px 10px;text-align:center;
-border-radius:12px
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
 }
-.card h3{font-size:17px;margin:8px 0}
-.card p{font-size:13px;color:#ccc}
-.about{
-padding:40px 20px;text-align:center;
-background:#102238
+
+.btn {
+    display: inline-block;
+    padding: 13px 23px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: .3s;
 }
-.about p{max-width:650px;margin:auto;color:#ddd}
-.contact{text-align:center;padding:40px 15px}
-.social{margin-top:15px}
-footer{
-background:#101f35;text-align:center;
-padding:22px;color:#bbb
+
+.primary {
+    color: #00101a;
+    background: var(--blue);
+    box-shadow: 0 0 15px rgba(0,217,255,.45);
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0 28px var(--blue);
+}
+
+.whatsapp {
+    background: #19c765;
+    color: white;
+}
+
+.instagram {
+    background: #d62976;
+    color: white;
+}
+
+.whatsapp:hover, .instagram:hover {
+    transform: translateY(-4px);
+    filter: brightness(1.15);
+}
+
+/* STATS */
+
+.stats {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 13px;
+}
+
+.stat {
+    text-align: center;
+    padding: 18px 8px;
+    background: rgba(9,28,49,.85);
+    border: 1px solid #145174;
+    border-radius: 12px;
+}
+
+.stat strong {
+    display: block;
+    font-size: 25px;
+    color: var(--blue);
+}
+
+.stat span {
+    color: #b8c8da;
+    font-size: 12px;
+}
+
+/* SECTION */
+
+.section {
+    padding: 65px 16px;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 30px;
+    color: var(--blue);
+    text-shadow: 0 0 12px rgba(0,217,255,.5);
+    margin-bottom: 8px;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #a9bed2;
+    margin-bottom: 28px;
+}
+
+/* SEARCH */
+
+.search-box {
+    max-width: 550px;
+    margin: 0 auto 30px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 15px 18px;
+    border-radius: 10px;
+    border: 1px solid #087da9;
+    outline: none;
+    color: white;
+    background: #0a1b30;
+    font-size: 15px;
+}
+
+.search-box input:focus {
+    border-color: var(--blue);
+    box-shadow: 0 0 15px rgba(0,217,255,.25);
+}
+
+.search-box input::placeholder {
+    color: #9aafc5;
+}
+
+/* SERVICE CARDS */
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 17px;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.service-card {
+    position: relative;
+    overflow: hidden;
+    min-height: 145px;
+    padding: 22px 13px;
+    text-align: center;
+    background: linear-gradient(145deg, #10243b, #071321);
+    border: 1px solid #164967;
+    border-radius: 14px;
+    transition: .3s;
+}
+
+.service-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    background: var(--blue);
+    transition: .5s;
+}
+
+.service-card:hover::before {
+    left: 0;
+}
+
+.service-card:hover {
+    transform: translateY(-7px);
+    border-color: var(--blue);
+    box-shadow: 0 0 22px rgba(0,217,255,.2);
+}
+
+.service-icon {
+    font-size: 32px;
+    margin-bottom: 7px;
+}
+
+.service-card h3 {
+    color: white;
+    font-size: 16px;
+    margin-bottom: 4px;
+}
+
+.service-card p {
+    color: #a9c4d8;
+    font-size: 12px;
+}
+
+.no-result {
+    display: none;
+    text-align: center;
+    color: #ffb6b6;
+    margin: 20px;
+}
+
+/* ABOUT */
+
+.about {
+    background: rgba(7,24,43,.88);
+    border-top: 1px solid #103b59;
+    border-bottom: 1px solid #103b59;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: auto;
+    padding: 25px;
+    text-align: center;
+    background: rgba(12,35,59,.7);
+    border: 1px solid #155274;
+    border-radius: 15px;
+}
+
+.about-content p {
+    color: #c5d5e4;
+    margin: 12px 0;
+}
+
+/* CONTACT */
+
+.contact-box {
+    max-width: 650px;
+    margin: auto;
+    padding: 30px 18px;
+    text-align: center;
+    background: linear-gradient(145deg, #102b47, #071321);
+    border: 1px solid #087da9;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(0,217,255,.12);
+}
+
+.contact-box p {
+    color: #d4e5f4;
+    margin: 10px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 28px 12px;
+    background: #020711;
+    border-top: 1px solid #164967;
+}
+
+footer h2 {
+    color: var(--blue);
+    letter-spacing: 2px;
+}
+
+footer p {
+    color: #91a7bd;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+footer a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+/* MOBILE */
+
+@media(max-width:600px) {
+    .logo { font-size: 23px; }
+    .hero { min-height: 500px; padding-top: 45px; }
+    .profile-wrap { width: 145px; height: 145px; }
+    .hero h2 { font-size: 18px; }
+    .section { padding: 48px 12px; }
+    .section-title { font-size: 25px; }
+    .stats { gap: 7px; }
+    .stat strong { font-size: 21px; }
+    .stat span { font-size: 10px; }
+    nav { gap: 2px; }
+    nav a { padding: 7px 9px; font-size: 12px; }
 }
 </style>
 </head>
+
 <body>
 
 <header>
-<h1>CYBER WITH RITESH</h1>
-<p>साइबर विद रितेश | आपकी डिजिटल सेवा</p>
+    <div class="logo">CYBER WITH RITESH</div>
+    <p>YOUR DIGITAL SERVICE DESTINATION</p>
 </header>
 
 <nav>
-<a href="#home">Home</a>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
+    <a href="#home">Home</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
 </nav>
+
+<!-- HERO -->
 
 <section class="hero" id="home">
 
-<img src="./Ritesh.jpg.jpg" class="profile" alt="Ritesh Kumar">
-onerror="this.style.display='none'">
+    <div class="profile-wrap">
+        <img src="./Ritesh.jpg.jpg"
+             class="profile"
+             alt="Ritesh Kumar">
+    </div>
 
-<h2>Welcome to Cyber With Ritesh</h2>
-<h3>साइबर विद रितेश में आपका स्वागत है</h3>
+    <div class="tagline">WELCOME TO MY DIGITAL WORLD</div>
 
-<p>सभी ऑनलाइन सेवाएँ एक ही जगह पर</p>
-<p>All Online Services at One Place</p>
+    <h1>CYBER WITH <span>RITESH</span></h1>
 
-<a class="btn" href="#services">हमारी सेवाएँ देखें</a>
+    <h2>साइबर विद रितेश में आपका स्वागत है</h2>
 
-<br>
+    <p>
+        आपकी सभी ऑनलाइन सेवाओं और डिजिटल सुविधाओं
+        की जानकारी एवं सहायता अब एक ही जगह पर।
+    </p>
 
-<a class="btn whatsapp"
-href="https://wa.me/917381506763">
-WhatsApp संपर्क करें
-</a>
+    <div class="buttons">
+        <a class="btn primary" href="#services">Explore Services</a>
 
-<a class="btn instagram"
-href="https://www.instagram.com/saraiyawaleritesh/"
-target="_blank">
-Instagram Follow करें
-</a>
+        <a class="btn whatsapp"
+           href="https://wa.me/917381506763"
+           target="_blank">
+           WhatsApp
+        </a>
+
+        <a class="btn instagram"
+           href="https://www.instagram.com/saraiyawaleritesh/"
+           target="_blank">
+           Instagram
+        </a>
+    </div>
 
 </section>
 
-<section class="services" id="services">
+<!-- STATS -->
 
-<h2 class="title">हमारी सेवाएँ | Our Services</h2>
+<div class="stats">
+    <div class="stat">
+        <strong>24+</strong>
+        <span>Digital Services</span>
+    </div>
 
-<div class="grid">
+    <div class="stat">
+        <strong>100%</strong>
+        <span>Digital Assistance</span>
+    </div>
 
-<div class="card">
-<h3>🪪 आधार कार्ड</h3>
-<p>Aadhaar Service Assistance</p>
+    <div class="stat">
+        <strong>24/7</strong>
+        <span>Online Contact</span>
+    </div>
 </div>
 
-<div class="card">
-<h3>💳 पैन कार्ड</h3>
-<p>PAN Card Assistance</p>
-</div>
+<!-- SERVICES -->
 
-<div class="card">
-<h3>📝 ऑनलाइन फॉर्म</h3>
-<p>Online Form Filling</p>
-</div>
+<section class="section" id="services">
 
-<div class="card">
-<h3>🏠 आवास योजना</h3>
-<p>Awas Yojana Assistance</p>
-</div>
+    <h2 class="section-title">OUR DIGITAL SERVICES</h2>
 
-<div class="card">
-<h3>🍚 राशन कार्ड</h3>
-<p>Ration Card Assistance</p>
-</div>
+    <p class="section-subtitle">
+        हमारी ऑनलाइन सेवाएँ | All Services at One Place
+    </p>
 
-<div class="card">
-<h3>🎓 छात्रवृत्ति</h3>
-<p>Scholarship Assistance</p>
-</div>
+    <div class="search-box">
+        <input
+          type="text"
+          id="serviceSearch"
+          placeholder="🔍 अपनी सेवा खोजें..."
+          oninput="searchServices()">
+    </div>
 
-<div class="card">
-<h3>🖨️ प्रिंट एवं स्कैन</h3>
-<p>Print & Scan</p>
-</div>
+    <div class="service-grid" id="serviceGrid">
 
-<div class="card">
-<h3>🏛️ सरकारी योजनाएँ</h3>
-<p>Government Scheme Information</p>
-</div>
+        <div class="service-card">
+            <div class="service-icon">🪪</div>
+            <h3>आधार कार्ड</h3>
+            <p>Aadhaar Assistance</p>
+        </div>
 
-<div class="card">
-<h3>📄 ऑनलाइन आवेदन</h3>
-<p>Online Applications</p>
-</div>
+        <div class="service-card">
+            <div class="service-icon">💳</div>
+            <h3>पैन कार्ड</h3>
+            <p>PAN Card Assistance</p>
+        </div>
 
-<div class="card">
-<h3>📚 बिहार बोर्ड सेवा</h3>
-<p>Bihar Board Assistance</p>
-</div>
+        <div class="service-card">
+            <div class="service-icon">🗳️</div>
+            <h3>वोटर कार्ड</h3>
+            <p>Voter ID Assistance</p>
+        </div>
 
-</div>
+        <div class="service-card">
+            <div class="service-icon">🏥</div>
+            <h3>आयुष्मान कार्ड</h3>
+            <p>Ayushman Card Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🍚</div>
+            <h3>राशन कार्ड</h3>
+            <p>Ration Card Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏠</div>
+            <h3>आवास योजना</h3>
+            <p>Awas Yojana Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📜</div>
+            <h3>जाति प्रमाण पत्र</h3>
+            <p>Caste Certificate</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📄</div>
+            <h3>आय प्रमाण पत्र</h3>
+            <p>Income Certificate</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏡</div>
+            <h3>निवास प्रमाण पत्र</h3>
+            <p>Residence Certificate</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🌾</div>
+            <h3>पीएम किसान योजना</h3>
+            <p>PM Kisan Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">👷</div>
+            <h3>ई-श्रम कार्ड</h3>
+            <p>E-Shram Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎓</div>
+            <h3>छात्रवृत्ति</h3>
+            <p>Scholarship Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📝</div>
+            <h3>ऑनलाइन फॉर्म</h3>
+            <p>Online Form Filling</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💼</div>
+            <h3>नौकरी आवेदन</h3>
+            <p>Job Application Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📚</div>
+            <h3>बिहार बोर्ड</h3>
+            <p>Bihar Board Services</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🎫</div>
+            <h3>एडमिट कार्ड</h3>
+            <p>Admit Card Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📊</div>
+            <h3>रिजल्ट चेक</h3>
+            <p>Result Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🖨️</div>
+            <h3>प्रिंट एवं स्कैन</h3>
+            <p>Print & Scan</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">⚡</div>
+            <h3>बिजली बिल</h3>
+            <p>Electricity Bill Assistance</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🏛️</div>
+            <h3>सरकारी योजनाएँ</h3>
+            <p>Government Schemes</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🚆</div>
+            <h3>ट्रेन टिकट</h3>
+            <p>Train Ticket Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">🚌</div>
+            <h3>बस टिकट</h3>
+            <p>Bus Ticket Information</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">📷</div>
+            <h3>फोटो एवं डॉक्यूमेंट</h3>
+            <p>Photo & Document Services</p>
+        </div>
+
+        <div class="service-card">
+            <div class="service-icon">💻</div>
+            <h3>अन्य ऑनलाइन सेवाएँ</h3>
+            <p>Other Digital Assistance</p>
+        </div>
+
+    </div>
+
+    <p class="no-result" id="noResult">
+        कोई सेवा नहीं मिली। दूसरा नाम खोजें।
+    </p>
+
 </section>
 
-<section class="about" id="about">
-<h2 class="title">हमारे बारे में | About Us</h2>
-<p>
-नमस्कार! मेरा नाम रितेश कुमार है।
-Cyber With Ritesh में आपका स्वागत है।
-यहाँ आपको ऑनलाइन सेवाओं, डिजिटल सुविधाओं
-और सरकारी योजनाओं की जानकारी एवं आवेदन
-में सहायता मिलेगी।
-<br><br>
-Hello! Welcome to Cyber With Ritesh.
-Your digital service assistance platform.
-</p>
+<!-- ABOUT -->
+
+<section class="section about" id="about">
+
+    <h2 class="section-title">ABOUT US</h2>
+
+    <p class="section-subtitle">हमारे बारे में</p>
+
+    <div class="about-content">
+
+        <h2 style="color:#00d9ff;">
+            नमस्कार! मैं रितेश कुमार हूँ।
+        </h2>
+
+        <p>
+            Cyber With Ritesh में आपका स्वागत है।
+            हमारा उद्देश्य लोगों को ऑनलाइन सेवाओं,
+            डिजिटल सुविधाओं और सरकारी योजनाओं की
+            जानकारी एवं आवेदन में सहायता प्रदान करना है।
+        </p>
+
+        <p>
+            Hello! Welcome to Cyber With Ritesh.
+            Your Digital Service Assistance Platform.
+        </p>
+
+    </div>
+
 </section>
 
-<section class="contact" id="contact">
-<h2 class="title">संपर्क करें | Contact Us</h2>
+<!-- CONTACT -->
 
-<p>📱 WhatsApp: 7381506763</p>
-<p>📸 Instagram: @saraiyawaleritesh</p>
+<section class="section" id="contact">
 
-<div class="social">
-<a class="btn whatsapp"
-href="https://wa.me/917381506763">
-WhatsApp Message
-</a>
+    <h2 class="section-title">CONTACT US</h2>
 
-<a class="btn instagram"
-href="https://www.instagram.com/saraiyawaleritesh/"
-target="_blank">
-Instagram Profile
-</a>
-</div>
+    <p class="section-subtitle">
+        हमसे संपर्क करें
+    </p>
+
+    <div class="contact-box">
+
+        <h2 style="color:#00d9ff;">
+            CYBER WITH RITESH
+        </h2>
+
+        <p>📱 WhatsApp: 7381506763</p>
+
+        <p>📸 Instagram: @saraiyawaleritesh</p>
+
+        <div class="buttons">
+
+            <a class="btn whatsapp"
+               href="https://wa.me/917381506763"
+               target="_blank">
+               WhatsApp Message
+            </a>
+
+            <a class="btn instagram"
+               href="https://www.instagram.com/saraiyawaleritesh/"
+               target="_blank">
+               Instagram Profile
+            </a>
+
+        </div>
+
+    </div>
+
 </section>
+
+<!-- FOOTER -->
 
 <footer>
-<h3>CYBER WITH RITESH</h3>
-<p>आपकी डिजिटल सेवा, आपके साथ</p>
-<p>© 2026 All Rights Reserved</p>
+
+    <h2>CYBER WITH RITESH</h2>
+
+    <p>आपकी डिजिटल सेवा, आपके साथ।</p>
+
+    <p>© 2026 Cyber With Ritesh | All Rights Reserved</p>
+
+    <p>
+      स्वतंत्र डिजिटल सहायता वेबसाइट।
+      सरकारी सेवाओं के लिए संबंधित अधिकृत पोर्टल देखें।
+    </p>
+
 </footer>
+
+<script>
+function searchServices() {
+
+    const input = document
+        .getElementById("serviceSearch")
+        .value.toLowerCase();
+
+    const cards = document.querySelectorAll(".service-card");
+
+    let visible = 0;
+
+    cards.forEach(function(card) {
+
+        const content = card.innerText.toLowerCase();
+
+        if (content.includes(input)) {
+            card.style.display = "block";
+            visible++;
+        } else {
+            card.style.display = "none";
+        }
+
+    });
+
+    document.getElementById("noResult").style.display =
+        visible === 0 ? "block" : "none";
+}
+</script>
 
 </body>
 </html>
